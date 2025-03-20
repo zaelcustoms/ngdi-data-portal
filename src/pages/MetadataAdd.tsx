@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MetadataForm from '@/components/MetadataForm';
 import { Button } from '@/components/ui/button';
-import { Eye } from 'lucide-react';
+import { Eye, Search } from 'lucide-react';
 
 const MetadataAdd = () => {
   return (
@@ -20,11 +20,18 @@ const MetadataAdd = () => {
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-3xl font-bold">Add Metadata</h1>
             
-            <Link to="/metadata/view/1">
-              <Button variant="outline" className="flex items-center gap-2">
-                <Eye className="w-4 h-4" /> View Example
-              </Button>
-            </Link>
+            <div className="flex gap-3">
+              <Link to="/metadata/search">
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Search className="w-4 h-4" /> Search
+                </Button>
+              </Link>
+              <Link to="/metadata/view/1">
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Eye className="w-4 h-4" /> View Example
+                </Button>
+              </Link>
+            </div>
           </div>
           
           <p className="text-gray-600 mb-8">

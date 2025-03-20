@@ -11,6 +11,7 @@ import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
 import MetadataAdd from "./pages/MetadataAdd";
 import MetadataView from "./pages/MetadataView";
+import MetadataSearch from "./pages/MetadataSearch";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/publications" element={<Publications />} />
           <Route path="/metadata/add" element={<MetadataAdd />} />
           <Route path="/metadata/view/:id" element={<MetadataView />} />
+          <Route path="/metadata/search" element={<MetadataSearch />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
