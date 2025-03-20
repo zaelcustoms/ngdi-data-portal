@@ -30,25 +30,25 @@ const Hero = () => {
               Discover, access, and contribute to Nigeria's comprehensive geospatial data repository for informed decision-making and planning.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button 
-                as={Link}
-                to="/metadata/search"
-                size="lg" 
-                className="bg-ngdi-600 hover:bg-ngdi-700 text-white transition-smooth"
-              >
-                Explore Data
-                <Search className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-ngdi-600 text-ngdi-600 hover:bg-ngdi-50"
-              >
-                <Link to="/metadata/add" className="flex items-center">
+              <Link to="/metadata/search">
+                <Button 
+                  size="lg" 
+                  className="bg-ngdi-600 hover:bg-ngdi-700 text-white transition-smooth"
+                >
+                  Explore Data
+                  <Search className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/metadata/add">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-ngdi-600 text-ngdi-600 hover:bg-ngdi-50"
+                >
                   Add Metadata
                   <Database className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
             
             <div className="pt-8 flex justify-center lg:justify-start">
