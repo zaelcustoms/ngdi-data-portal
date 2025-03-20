@@ -9,13 +9,99 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      metadata: {
+        Row: {
+          author: string
+          categories: string[] | null
+          created_at: string | null
+          data_types: string[] | null
+          date_from: string | null
+          date_to: string | null
+          date_updated: string | null
+          description: string | null
+          id: string
+          organization: string
+          title: string
+        }
+        Insert: {
+          author: string
+          categories?: string[] | null
+          created_at?: string | null
+          data_types?: string[] | null
+          date_from?: string | null
+          date_to?: string | null
+          date_updated?: string | null
+          description?: string | null
+          id?: string
+          organization: string
+          title: string
+        }
+        Update: {
+          author?: string
+          categories?: string[] | null
+          created_at?: string | null
+          data_types?: string[] | null
+          date_from?: string | null
+          date_to?: string | null
+          date_updated?: string | null
+          description?: string | null
+          id?: string
+          organization?: string
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      gtrgm_compress: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      gtrgm_decompress: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      gtrgm_in: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      gtrgm_options: {
+        Args: {
+          "": unknown
+        }
+        Returns: undefined
+      }
+      gtrgm_out: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      set_limit: {
+        Args: {
+          "": number
+        }
+        Returns: number
+      }
+      show_limit: {
+        Args: Record<PropertyKey, never>
+        Returns: number
+      }
+      show_trgm: {
+        Args: {
+          "": string
+        }
+        Returns: string[]
+      }
     }
     Enums: {
       [_ in never]: never

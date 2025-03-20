@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -84,6 +83,7 @@ const MetadataSearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
       categories: [],
       dataTypes: [],
     });
+    onSearch({});
   };
 
   return (

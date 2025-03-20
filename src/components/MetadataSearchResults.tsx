@@ -15,7 +15,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Calendar, Eye, User } from 'lucide-react';
 
 type SearchResult = {
-  id: number;
+  id: string;
   title: string;
   author: string;
   organization: string;
@@ -36,34 +36,22 @@ const MetadataSearchResults: React.FC<SearchResultsProps> = ({
   if (isLoading) {
     return (
       <div className="space-y-4">
-        <Card>
-          <CardHeader className="pb-2">
-            <Skeleton className="h-7 w-2/3" />
-            <Skeleton className="h-4 w-1/3" />
-          </CardHeader>
-          <CardContent>
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-2/3" />
-          </CardContent>
-          <CardFooter>
-            <Skeleton className="h-10 w-24" />
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <Skeleton className="h-7 w-1/2" />
-            <Skeleton className="h-4 w-1/4" />
-          </CardHeader>
-          <CardContent>
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-3/4" />
-          </CardContent>
-          <CardFooter>
-            <Skeleton className="h-10 w-24" />
-          </CardFooter>
-        </Card>
+        {[1, 2, 3].map((item) => (
+          <Card key={item}>
+            <CardHeader className="pb-2">
+              <Skeleton className="h-7 w-2/3" />
+              <Skeleton className="h-4 w-1/3" />
+            </CardHeader>
+            <CardContent>
+              <Skeleton className="h-4 w-full mb-2" />
+              <Skeleton className="h-4 w-full mb-2" />
+              <Skeleton className="h-4 w-2/3" />
+            </CardContent>
+            <CardFooter>
+              <Skeleton className="h-10 w-24" />
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     );
   }
