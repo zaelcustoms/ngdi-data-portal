@@ -31,14 +31,22 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-50">
       <Navbar />
       
       <main className="flex-1">
         <Hero />
-        <FeaturesSection />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 -mt-10 bg-white rounded-2xl shadow-xl overflow-hidden">
+            <FeaturesSection />
+          </div>
+        </div>
         <StatsSection />
-        <LatestDatasets />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 -mt-10 bg-white rounded-2xl shadow-xl overflow-hidden">
+            <LatestDatasets />
+          </div>
+        </div>
         <CallToAction />
       </main>
       
