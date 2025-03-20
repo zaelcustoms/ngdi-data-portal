@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Committee from "./pages/Committee";
 import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
+import MetadataAdd from "./pages/MetadataAdd";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/committee" element={<Committee />} />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/metadata/add" element={<MetadataAdd />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
