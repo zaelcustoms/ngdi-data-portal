@@ -31,9 +31,23 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/committee" element={<Committee />} />
             <Route path="/publications" element={<Publications />} />
-            <Route path="/metadata/add" element={<MetadataAdd />} />
+            <Route 
+              path="/metadata/add" 
+              element={
+                <ProtectedRoute>
+                  <MetadataAdd />
+                </ProtectedRoute>
+              } 
+            />
             <Route path="/metadata/view/:id" element={<MetadataView />} />
-            <Route path="/metadata/search" element={<MetadataSearch />} />
+            <Route 
+              path="/metadata/search" 
+              element={
+                <ProtectedRoute>
+                  <MetadataSearch />
+                </ProtectedRoute>
+              } 
+            />
             <Route path="/auth" element={<Auth />} />
             <Route 
               path="/dashboard" 
