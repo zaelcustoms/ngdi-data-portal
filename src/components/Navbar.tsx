@@ -2,12 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X, ChevronDown, User } from "lucide-react";
+import { useAuth } from '@/contexts/AuthContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,14 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleAuthClick = () => {
+    if (user) {
+      navigate('/dashboard');
+    } else {
+      navigate('/auth');
+    }
   };
 
   return (
@@ -62,8 +73,16 @@ const Navbar = () => {
               variant="default" 
               size="sm" 
               className="ml-2 px-4 py-2 font-medium rounded-md transition-smooth bg-ngdi-600 hover:bg-ngdi-700"
+              onClick={handleAuthClick}
             >
-              Login
+              {user ? (
+                <span className="flex items-center">
+                  <User className="w-4 h-4 mr-1" />
+                  Dashboard
+                </span>
+              ) : (
+                'Login'
+              )}
             </Button>
           </nav>
 
@@ -100,8 +119,16 @@ const Navbar = () => {
               variant="default" 
               size="default" 
               className="mt-2 w-full bg-ngdi-600 hover:bg-ngdi-700"
+              onClick={handleAuthClick}
             >
-              Login
+              {user ? (
+                <span className="flex items-center">
+                  <User className="w-4 h-4 mr-1" />
+                  Dashboard
+                </span>
+              ) : (
+                'Login'
+              )}
             </Button>
           </nav>
         </div>
